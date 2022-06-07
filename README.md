@@ -24,7 +24,7 @@
 
 ## Github源码
 
-这个是我们小组的 [**Github仓库**](https://github.com/Logindog/shabisjn.github.io);
+这个是我们小组的 [**Github仓库**](https://github.com/Logindog/Logindog.github.io);
 
 ## 实现原理
 

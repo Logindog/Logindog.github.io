@@ -1,37 +1,90 @@
-## Welcome to GitHub Pages
+# GroupSeven_Java_HomeWork
 
-You can use the [editor on GitHub](https://github.com/Logindog/Logindog.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+			  __ |__  | |  (_) |__ _ _ __ _ _ _ _  _ 	
+			 / _` |/ /| |__| | '_ \\ '_/ _` | '_| || |	
+			 \\__,/_/|____|_|_.__/_| \\__,_|_|  \\_,	
+			 |___/                              |__/		
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+## 项目介绍
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+这是一个基于 **Java** **MySQL** **Shell** 开发的图书管理系统，已经接入 **云端** 的MySQL数据库，可以随时调用修改。
 
-```markdown
-Syntax highlighted code block
+## 项目功能
 
-# Header 1
-## Header 2
-### Header 3
+1.你可以在图书管理直接录入图书信息，以及更新图书内容等等运维管理。
 
-- Bulleted
-- List
+2.基于Java编写，运行效率更高，省去繁琐的MySQL数据库语句添加。
 
-1. Numbered
-2. List
+3.数据存储在云端，可以有效防丢失。
 
-**Bold** and _Italic_ and `Code` text
+## 项目人员
 
-[Link](url) and ![Image](src)
+![readme.png](https://s2.loli.net/2022/06/08/lWLxwFJ5Oe3c297.png)
+
+## Github源码
+
+这个是我们小组的 [**Github仓库**](https://github.com/Logindog/shabisjn.github.io);
+
+## 实现原理
+
+通过 java 的 **JDBC** 的API调用MySQL实现用Java向MySQL数据库中录入数据。
+
+## 项目开发平台支持
+
+Eclipse Java, Oracle MySQL ，Debian Linux.
+
+### Eclipse Java
+
+主开发平台，使用Java编写主系统，提供主界面.
+
+调用方法：**JDBC** 为主，并且使用了 for,if 等基本语法.
+
+例如：
+
+```java
+public static Connection getInstance() {
+	if (m_Connection == null) {
+		try {
+			FileReader fr = new FileReader(new File("DatabaseSettings.txt"));
+			BufferedReader br = new BufferedReader(fr);
+			if (!fr.ready() || !br.ready()) System.err.println("无法从DatabaseSettings.txt中获取数据库访问信息");
+			
+			String address  = br.readLine();
+			String username = br.readLine();
+			String passwd   = br.readLine();
+					
+			m_Connection = DriverManager.getConnection(address, username, passwd);
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	return m_Connection;
+}
+//引用部分JDBC的连接源码
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### Oracle MySQL
 
-### Jekyll Themes
+负责API接入兼调用存储数据.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Logindog/Logindog.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+调用方法: SQL语句为主，其中包含创建数据库，创建表，录入数据等SQL语句。
 
-### Support or Contact
+例如:
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+`CREATE DATABASE IF NOT EXISTS g7_library; //创建一个叫做g7_library的数据库` 
+
+### Debian Linux
+
+负责云端存储MySQL数据.
+
+调用方法: 在Debian Linux的服务器环境使用SHELL语句安装MySQL，完成云端MySQL配置。
+
+例如:
+
+`sudo apt install mysql //在Debian类Linux中安装MySQL环境`
+
+`mysql -h ali.justu.cf -P 3306 -u niit -p root //连接到远程MySQL服务器`
+
+或者使用由 **myPHPadmin** 提供的 [**GUI**](http://8.130.109.219:888/phpmyadmin_f87927f79077a381/index.php) 进行连接.

@@ -1,4 +1,4 @@
-# GroupSeven_Java_HomeWork
+# G7_Java_HomeWork
 
 			  __ |__  | |  (_) |__ _ _ __ _ _ _ _  _ 	
 			 / _` |/ /| |__| | '_ \\ '_/ _` | '_| || |	
@@ -85,6 +85,6 @@ public static Connection getInstance() {
 
 `sudo apt install mysql //在Debian类Linux中安装MySQL环境`
 
-`mysql -h ali.justu.cf -P 3306 -u niit -p root //连接到远程MySQL服务器`
+`mysql -h tencent.0330.cf -P 3306 -u niit -p root //连接到远程MySQL服务器`
 
-或者使用由 **myPHPadmin** 提供的 [**GUI**](http://8.130.109.219:888/phpmyadmin_f87927f79077a381/index.php) 进行连接.
+或者使用由 **myPHPadmin** 提供的 [**GUI**](http://114.132.189.77:888/phpmyadmin_45eb48f3ff573c4a/) 进行连接.

@@ -20,11 +20,11 @@
 
 ## 项目人员
 
-![readme.png](https://s2.loli.net/2022/06/08/lWLxwFJ5Oe3c297.png)
+![S_DDY0OH9A~LBLX3ABXM6`Q.jpg](https://s2.loli.net/2022/06/16/a9jYKRrUxmhTnqC.jpg)
 
 ## Github源码
 
-这个是我们小组的 [**Github仓库**](https://github.com/Logindog/Logindog.github.io);
+这个是我们小组的 [**Github仓库**](https://git.imaries.cf/Kmroiosn/Homework_LibraryManageSystem);
 
 ## 实现原理
 
